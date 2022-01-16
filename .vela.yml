@@ -9,3 +9,26 @@ steps:
       repo: asphyxia-core
       tags:
         - dry_run
+
+  - name: build image
+    image: target/vela-kaniko:v0.8.0
+    secrets:
+      - source: docker_username
+        target: parameter_registry_username
+      - source: docker_password
+        target: parameter_registry_password
+    parameters:
+      registry: docker.internal.mapes.info
+      repo: asphyxia-core
+      tags:
+        - "${VELA_BUILD_TAG:##v}"
+    ruleset:
+      event: tag
+  
+secrets:
+  - name: docker_username
+    type: org
+    key: tmapes/docker_username
+  - name: docker_password
+    type: org
+    key: tmapes/docker_password
