@@ -17,9 +17,9 @@ steps:
     image: target/vela-kaniko:v0.8.0
     secrets:
       - source: docker_username
-        target: parameter_registry_username
+        target: parameter_username
       - source: docker_password
-        target: parameter_registry_password
+        target: parameter_password
     parameters:
       registry: docker.internal.mapes.info
       repo: asphyxia-core
