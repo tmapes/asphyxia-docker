@@ -1,17 +1,17 @@
 version: "1.0"
 
 steps:
-  # - name: build image dry run
-  #   image: target/vela-kaniko:v0.8.0
-  #   parameters:
-  #     dry_run: true
-  #     registry: docker.internal.mapes.info
-  #     repo: asphyxia-core
-  #     tags:
-  #       - dry_run
-  #   ruleset:
-  #       event: [push, pull_request]
-  #       branch: [main]
+  - name: build image dry run
+    image: target/vela-kaniko:v0.8.0
+    parameters:
+      dry_run: true
+      registry: docker.internal.mapes.info
+      repo: asphyxia-core
+      tags:
+        - dry_run
+    ruleset:
+        event: [push, pull_request]
+        branch: [main]
 
   - name: build image
     image: target/vela-kaniko:v0.8.0
@@ -21,15 +21,12 @@ steps:
       - source: docker_password
         target: parameter_password
     parameters:
-      dry_run: true
-      log_level: trace
       registry: docker.internal.mapes.info
-      repo: asphyxia-core
+      repo: docker.internal.mapes.info/asphyxia-core
       tags:
-        - dry_run
-        # - "${VELA_BUILD_TAG:##v}"
-    # ruleset:
-      # event: tag
+        - "${VELA_BUILD_TAG:##v}"
+    ruleset:
+      event: tag
   
 secrets:
   - name: docker_username
