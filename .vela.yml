@@ -9,6 +9,9 @@ steps:
       repo: asphyxia-core
       tags:
         - dry_run
+    ruleset:
+        event: [push, pull_request]
+        branch: [main]
 
   - name: build image
     image: target/vela-kaniko:v0.8.0
