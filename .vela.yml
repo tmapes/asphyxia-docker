@@ -1,0 +1,11 @@
+version: "1.0"
+
+steps:
+  - name: build image dry run
+    image: target/vela-kaniko:v0.8.0
+    parameters:
+      dry_run: true
+      registry: docker.internal.mapes.info
+      repo: asphyxia-core
+      tags:
+        - dry_run
