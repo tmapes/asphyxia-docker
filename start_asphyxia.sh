@@ -7,7 +7,7 @@ PING_IP_ADDRESS="${PING_IP_ADDRESS:=127.0.0.1}"
 
 EXTRA_OPTS=""
 if [[ -n "$DEBUG_OUTPUT" ]]; then
-  EXTRA_OPTS = "$EXTRA_OPTS --debug"
+  EXTRA_OPTS="$EXTRA_OPTS --debug"
 fi
 
 
