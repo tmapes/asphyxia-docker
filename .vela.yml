@@ -21,12 +21,14 @@ steps:
       - source: docker_password
         target: parameter_password
     parameters:
+      dry_run: true
+      log_level: trace
       registry: docker.internal.mapes.info
       repo: asphyxia-core
       tags:
         - "${VELA_BUILD_TAG:##v}"
-    ruleset:
-      event: tag
+    # ruleset:
+      # event: tag
   
 secrets:
   - name: docker_username
