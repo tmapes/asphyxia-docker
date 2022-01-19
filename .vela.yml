@@ -5,7 +5,7 @@ steps:
     image: target/vela-kaniko:v0.8.0
     parameters:
       dry_run: true
-      repo: asphyxia-docker
+      repo: docker.internal.mapes.info/asphyxia-docker
       tags:
         - dry_run
     ruleset:
@@ -28,6 +28,7 @@ steps:
       #   - docker.internal.mapes.info
       registry: docker.internal.mapes.info
       repo: docker.internal.mapes.info/asphyxia-docker
+      mirror: docker.mapes.info
       tags:
         - "${VELA_BUILD_TAG:##v}"
     ruleset:
