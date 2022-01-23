@@ -1,10 +1,9 @@
-
 services:
   server:
-    image: docker.internal.mapes.info/asphyxia-docker:1.0.1
+    image: docker.internal.mapes.info/asphyxia-docker:1.0.4
     platform: linux/x86_64
     ports:
       - "8083:8083"
-      - "5700:5700"
     environment:
       - HOST=0.0.0.0
+      - PING_IP_ADDRESS=8.8.8.8

@@ -23,9 +23,8 @@ steps:
       dry_run: true
       # TODO Vela update Kaniko to support pushing to insecure registries
       #   https://github.com/go-vela/community/issues/470
-      # insecure: true
-      # insecure_registries:
-      #   - docker.internal.mapes.info
+      insecure_registries:
+        - docker.internal.mapes.info
       registry: docker.internal.mapes.info
       repo: docker.internal.mapes.info/asphyxia-docker
       mirror: docker.mapes.info
