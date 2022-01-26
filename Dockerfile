@@ -1,4 +1,4 @@
-FROM debian:bookworm-slim
+FROM docker.mapes.info/debian:bookworm-slim
 
 WORKDIR /opt/asphyxia
 
