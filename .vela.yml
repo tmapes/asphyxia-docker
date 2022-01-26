@@ -13,21 +13,19 @@ steps:
         branch: [main]
 
   - name: build image
-    image: target/vela-kaniko:v0.8.0
+    # image: target/vela-kaniko:v0.8.0
+    image: target/vela-kaniko:latest
     secrets:
       - source: docker_username
         target: parameter_username
       - source: docker_password
         target: parameter_password
     parameters:
-      dry_run: true
-      # TODO Vela update Kaniko to support pushing to insecure registries
-      #   https://github.com/go-vela/community/issues/470
       insecure_registries:
         - docker.internal.mapes.info
       registry: docker.internal.mapes.info
       repo: docker.internal.mapes.info/asphyxia-docker
-      mirror: docker.mapes.info
+      # mirror: docker.mapes.info
       tags:
         - "${VELA_BUILD_TAG:##v}"
     ruleset:
