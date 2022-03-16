@@ -7,4 +7,4 @@ PING_IP_ADDRESS="${PING_IP_ADDRESS:=127.0.0.1}"
 
 echo "Running on port: $LISTENING_PORT, client matching port: $MATCHING_PORT, host: $HOST, pingable ip address: $PING_IP_ADDRESS"
 
-/opt/asphyxia/asphyxia-core -p $LISTENING_PORT -b $HOST -m $MATCHING_PORT -pa $PING_IP_ADDRESS
+exec /opt/asphyxia/asphyxia-core -p $LISTENING_PORT -b $HOST -m $MATCHING_PORT -pa $PING_IP_ADDRESS
