@@ -14,12 +14,9 @@ steps:
 
   - name: build image
     image: target/vela-kaniko:v0.13.0
-    secrets:
-      - source: docker_username
-        target: parameter_username
-      - source: docker_password
-        target: parameter_password
+    secrets: [docker_username, docker_password]
     parameters:
+      registry: https://index.docker.io/v1/
       repo: tjmapes/asphyxia-docker
       tags:
         - "${VELA_BUILD_TAG:##v}"
@@ -30,6 +27,8 @@ secrets:
   - name: docker_username
     type: org
     key: tmapes/docker_username
+    engine: native
   - name: docker_password
     type: org
     key: tmapes/docker_password
+    engine: native
