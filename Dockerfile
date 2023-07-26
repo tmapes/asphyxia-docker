@@ -6,7 +6,7 @@ COPY start_asphyxia.sh /opt/asphyxia
 
 RUN apt update \
     && apt install -y curl unzip \
-    && curl -sLO https://github.com/asphyxia-core/asphyxia-core.github.io/releases/download/v1.40/asphyxia-core-linux-x64.zip \
+    && curl -sLO https://github.com/asphyxia-core/asphyxia-core.github.io/releases/download/v1.50/asphyxia-core-linux-x64.zip \
     && unzip asphyxia-core-linux-x64.zip && rm asphyxia-core-linux-x64.zip \
     && chmod +x start_asphyxia.sh \
     && mkdir -p /opt/asphyxia/savedata /opt/asphyxia/plugins \
