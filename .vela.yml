@@ -2,7 +2,7 @@ version: "1.0"
 
 steps:
   - name: build image dry run
-    image: target/vela-kaniko:v0.13.0
+    image: target/vela-kaniko:v0.14.0
     parameters:
       dry_run: true
       repo: tjmapes/asphyxia-docker
@@ -13,7 +13,7 @@ steps:
         branch: [main]
 
   - name: build image
-    image: target/vela-kaniko:v0.13.0
+    image: target/vela-kaniko:v0.14.0
     secrets: [docker_username, docker_password]
     parameters:
       registry: https://index.docker.io/v1/
@@ -22,7 +22,7 @@ steps:
         - "${VELA_BUILD_TAG:##v}"
     ruleset:
       event: tag
-  
+
 secrets:
   - name: docker_username
     type: org
