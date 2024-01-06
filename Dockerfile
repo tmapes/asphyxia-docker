@@ -1,4 +1,4 @@
-FROM docker.mapes.info/debian:bookworm-slim
+FROM debian:bookworm-slim
 
 WORKDIR /opt/asphyxia
 
@@ -14,6 +14,7 @@ RUN apt update \
     && chmod +x /usr/local/bin/dumb-init
 
 EXPOSE 8083
+VOLUME /opt/asphyxia/savedata /opt/asphyxia/plugins
 
 ENTRYPOINT [ "/usr/local/bin/dumb-init", "--" ]
 CMD ["/opt/asphyxia/start_asphyxia.sh" ]
