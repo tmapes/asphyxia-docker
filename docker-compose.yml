@@ -1,6 +1,6 @@
 services:
   server:
-    image: docker.internal.mapes.info/asphyxia-docker:1.0.4
+    image: docker.mapes.info/tjmapes/asphyxia-docker:v1.50.0c-2
     platform: linux/x86_64
     ports:
       - "8083:8083"
