@@ -1,6 +1,6 @@
 services:
   server:
-    image: docker.mapes.info/tjmapes/asphyxia-docker:v1.50.0c-2
+    image: docker.mapes.info/tjmapes/asphyxia-docker:v1.50.0c-2@sha256:d8d1774a2882ccfadec1cd3fc1b482b67cac305bcd39c2e54a03975d4b3ba631
     platform: linux/x86_64
     ports:
       - "8083:8083"
