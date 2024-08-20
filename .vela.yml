@@ -2,7 +2,7 @@ version: "1.0"
 
 steps:
   - name: build image dry run
-    image: target/vela-kaniko:v0.17.0@sha256:56d8499175eb5a1b5342a86f706b87bff89878d2e5a5d835dcb9ffaa21836d19
+    image: target/vela-kaniko:v0.18.0@sha256:e8a34dc03399a6f126d301568811484e4d52eacb85049244866161934ee4bd60
     parameters:
       dry_run: true
       repo: tjmapes/asphyxia-docker
@@ -13,7 +13,7 @@ steps:
       branch: [main]
 
   - name: build image
-    image: target/vela-kaniko:v0.17.0@sha256:56d8499175eb5a1b5342a86f706b87bff89878d2e5a5d835dcb9ffaa21836d19
+    image: target/vela-kaniko:v0.18.0@sha256:e8a34dc03399a6f126d301568811484e4d52eacb85049244866161934ee4bd60
     secrets: [docker_username, docker_password]
     parameters:
       registry: https://index.docker.io/v1/
