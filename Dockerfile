@@ -1,4 +1,4 @@
-FROM debian:bookworm-slim@sha256:5de9e23e78fbbeea7a67efd02c2b072fecafb7efa6cf4563f355292161c53793
+FROM debian:bookworm-slim@sha256:7d7629aae6193dd56c2bb5315f779bdae2c0237766547c6548f4680471be977a
 
 WORKDIR /opt/asphyxia
 
